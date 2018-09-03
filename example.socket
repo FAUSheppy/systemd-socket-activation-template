@@ -1,0 +1,11 @@
+[Unit]
+Description=Socket Activator for example.service
+PartOf=example-proxy.service
+
+[Socket]
+ListenStream=PORT_NUMBER_HERE
+BindIPv6Only=both
+Accept=false
+
+[Install]
+WantedBy=multi-user.target

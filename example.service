@@ -1,0 +1,32 @@
+[Unit]
+Description=minecraft server
+After=network.target
+Requires=sheppy-minecraft-autodeactivate.timer
+
+[Service]
+Type=simple
+User=minecraft
+WorkingDirectory=/home/minecraft/server/
+Nice=2
+CPUAffinity=0,3
+
+## exit status of mcrcon on success, 143 ist SIGTERM in java, the default for mc
+SuccessExitStatus=2 3 143 255
+
+ExecStart=/absolute/path/to/example.sh
+ExecStop=pkill example.sh
+
+TimeoutStopSec=30
+Restart=always
+RestartSec=60
+
+## RES CONTROL ##
+MemoryLow=2G                                                                                                                                             
+MemoryHigh=4G
+## Java VM Limit is 4GB so this should never happen ##
+MemoryMax=6G
+CPUQuota=100%
+
+
+[Install]
+WantedBy=multi-user.target

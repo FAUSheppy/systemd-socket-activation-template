@@ -1,0 +1,10 @@
+[Unit]
+Description=Continiously check if example.service should be stopped
+After=example.service
+PartOf=example.service
+
+[Timer]
+OnUnitActiveSec=15min
+OnActiveSec=14min
+Persistent=false
+Unit=sheppy-minecraft-autodeactivate.service

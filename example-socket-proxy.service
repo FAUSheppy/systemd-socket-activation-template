@@ -1,0 +1,10 @@
+[Unit]
+Description=socket proxy example.service
+After=example.service
+Requires=example.service
+
+[Service]
+ExecStart=/lib/systemd/systemd-socket-proxyd 127.0.0.1:PORT_NUMBER_HERE
+
+[Install]
+WantedBy=multi-user.target

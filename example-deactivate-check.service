@@ -1,0 +1,6 @@
+[Unit]
+Description=Check if unit example.service should be stopped.
+
+[Service]
+Type=oneshot
+ExecStart=/absolute/path/to/example-check-stop.sh
