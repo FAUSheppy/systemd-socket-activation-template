@@ -1,0 +1,1 @@
+Please refer to [my blog](https://blog.atlantishq.de/post/socket-activation/) for a in-depth explanation on how to use this template.
